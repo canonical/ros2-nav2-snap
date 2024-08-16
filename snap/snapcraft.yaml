@@ -124,6 +124,7 @@ parts:
     stage-packages:
       - wget
       - libssl3
+      - libboost-all-dev
 
   scripts:
     plugin: dump
