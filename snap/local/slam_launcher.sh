@@ -23,4 +23,4 @@ else
 fi
 
 ${SNAP}/ros2 launch nav2_bringup slam_launch.py \
-  params_file:=${CONFIG_FILE} use_sim_time:=${SIMULATION}
+  params_file:=${CONFIG_FILE}
