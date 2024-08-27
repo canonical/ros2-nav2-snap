@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - jazzy
+      - test/ci
   pull_request:
     branches:
       - jazzy
