@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - jazzy
-      - test/ci
+      - test/stage-packages
   pull_request:
     branches:
       - jazzy
