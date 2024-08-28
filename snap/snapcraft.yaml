@@ -132,11 +132,13 @@ parts:
     source: snap/local/
     organize:
       '*.sh': usr/bin/
+
   configuration-templates:
     plugin: dump
     source: snap/local/configuration_templates/
     organize:
       '*.yaml': usr/share/ros2-nav2/configuration_templates/
+
   jazzy-desktop-libamdhip-exec-stack:
     # https://github.com/ROCm/clr/issues/22
     after: [ros2-nav2]
