@@ -29,4 +29,4 @@ else
 fi
 
 ros2 launch nav2_bringup localization_launch.py \
-  params_file:=${CONFIG_FILE} map:=${MAP_FILE}
+  params_file:=${CONFIG_FILE} map:=${MAP_FILE} use_sim_time:=${SIMULATION}
