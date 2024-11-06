@@ -1,6 +1,5 @@
 name: ros2-nav2
 version: '0.1'
-license: Apache-2.0
 summary: The ros2-nav2 navigation snap
 description: |
   The snap provides mapping, localization and navigation capabilities.
@@ -73,12 +72,15 @@ description: |
     snap stop ros2-nav2.localization
     snap stop ros2-nav2.navigation
 
+website: https://github.com/canonical/ros2-nav2-snap
+source-code: https://github.com/canonical/ros2-nav2-snap
+issues: https://github.com/canonical/ros2-nav2-snap/issues
+contact: ubuntu-robotics-community@canonical.com
+license: Apache-2.0
+
 grade: stable
 confinement: strict
 base: core24
-
-contact: https://github.com/ubuntu-robotics/ros2-nav2/issues
-issues: https://github.com/ubuntu-robotics/ros2-nav2/issues
 
 platforms:
   amd64:
