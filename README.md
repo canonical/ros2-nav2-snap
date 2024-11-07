@@ -28,13 +28,13 @@ To ensure maximum flexibility for users, it is intentionally provided without an
 The ros2-nav2 snap must be configured by means of snap parameters.
 The available configuration parameters are listed below:
 
-- [simulation](https://github.com/ubuntu-robotics/ros2-nav2-snap/blob/main/snap/hooks/install#L10) (string, default: "False")
-- [slam-config](https://github.com/ubuntu-robotics/ros2-nav2-snap/blob/main/snap/hooks/install#L11) (string, default: "")
-- [map-saver-config](https://github.com/ubuntu-robotics/ros2-nav2-snap/blob/main/snap/hooks/install#L16) (string, default: "")
-- [map-yaml-path](https://github.com/ubuntu-robotics/ros2-nav2-snap/blob/main/snap/hooks/install#L15) (string, default: "")
-- [map](https://github.com/ubuntu-robotics/ros2-nav2-snap/blob/main/snap/hooks/install#L14) (string, default="${SNAP_COMMON}/maps/current_map.yaml")
-- [localization-config](https://github.com/ubuntu-robotics/ros2-nav2-snap/blob/main/snap/hooks/install#L13) (string, default: "")
-- [navigation-config](https://github.com/ubuntu-robotics/ros2-nav2-snap/blob/main/snap/hooks/install#L12) (string, default: "")
+- [simulation](https://github.com/canonical/ros2-nav2-snap/blob/main/snap/hooks/install#L10) (string, default: "False")
+- [slam-config](https://github.com/canonical/ros2-nav2-snap/blob/main/snap/hooks/install#L11) (string, default: "")
+- [map-saver-config](https://github.com/canonical/ros2-nav2-snap/blob/main/snap/hooks/install#L16) (string, default: "")
+- [map-yaml-path](https://github.com/canonical/ros2-nav2-snap/blob/main/snap/hooks/install#L15) (string, default: "")
+- [map](https://github.com/canonical/ros2-nav2-snap/blob/main/snap/hooks/install#L14) (string, default="${SNAP_COMMON}/maps/current_map.yaml")
+- [localization-config](https://github.com/canonical/ros2-nav2-snap/blob/main/snap/hooks/install#L13) (string, default: "")
+- [navigation-config](https://github.com/canonical/ros2-nav2-snap/blob/main/snap/hooks/install#L12) (string, default: "")
 
 The `slam-config`, `localization-config`, and `navigation-config` parameters are essentials for the proper functioning of these applications.
 

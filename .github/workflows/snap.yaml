@@ -9,23 +9,22 @@ on:
   workflow_dispatch:
   workflow_call:
    inputs:
-      branch-name:
+      git-ref:
         required: false
         type: string
-        default: ''
+        default: ${{ github.ref }}
 
 jobs:
   snap:
-    uses: ubuntu-robotics/snap_workflows/.github/workflows/snap.yaml@main
+    uses: canonical/robotics-actions-workflows/.github/workflows/snap.yaml@main
     secrets:
-      store-login: ${{ secrets.STORE_LOGIN }}
+      snapstore-login: ${{ secrets.STORE_LOGIN }}
     with:
-      branch-name: ${{ inputs.branch-name == '' && github.ref || inputs.branch-name }}
-      snap-name: ros2-nav2
-      enable-experimental-extensions-env: true
-      publish: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
-      publish-track: jazzy
-      test-script: |
+      git-ref: ${{ inputs.git-ref }}
+      runs-on: '["ubuntu-latest", ["self-hosted", "linux", "ARM64", "large", "noble"]]'
+      snapcraft-enable-experimental-extensions: true
+      snap-track: jazzy
+      snap-test-script: |
                     #!/bin/bash
 
                     check_existence() {
@@ -68,7 +67,7 @@ jobs:
                     sudo snap set ros2-teleop nav-vel="cmd_vel_nav"
 
                     ## Set a slam config
-                    sudo snap set ros2-nav2 slam-config=https://raw.githubusercontent.com/ubuntu-robotics/ros2-nav2-snap/main/snap/local/configuration_templates/slam_params_template.yaml
+                    sudo snap set ros2-nav2 slam-config=https://raw.githubusercontent.com/canonical/ros2-nav2-snap/main/snap/local/configuration_templates/slam_params_template.yaml
 
                     ## Test slam application
                     sudo snap start ros2-nav2.slam
@@ -81,7 +80,7 @@ jobs:
                     sudo snap set ros2-nav2 map-yaml-path=https://raw.githubusercontent.com/ros-navigation/navigation2/humble/nav2_bringup/maps/turtlebot3_world.yaml
 
                     ## Set localization configuration
-                    sudo snap set ros2-nav2 localization-config=https://raw.githubusercontent.com/ubuntu-robotics/ros2-nav2-snap/main/snap/local/configuration_templates/localization_params_template.yaml
+                    sudo snap set ros2-nav2 localization-config=https://raw.githubusercontent.com/canonical/ros2-nav2-snap/main/snap/local/configuration_templates/localization_params_template.yaml
 
                     ## Test localization application
                     sudo snap start ros2-nav2.localization
@@ -100,7 +99,7 @@ jobs:
                     fi             
 
                     ## Set navigation configuration
-                    sudo snap set ros2-nav2 navigation-config=https://raw.githubusercontent.com/ubuntu-robotics/ros2-nav2-snap/main/snap/local/configuration_templates/nav2_params_template.yaml
+                    sudo snap set ros2-nav2 navigation-config=https://raw.githubusercontent.com/canonical/ros2-nav2-snap/main/snap/local/configuration_templates/nav2_params_template.yaml
 
                     ## Test navigation configuration
                     sudo snap start ros2-nav2.navigation
