@@ -6,6 +6,9 @@ on:
   pull_request:
     branches:
       - humble
+    paths-ignore:
+      - README.md
+      - .gitignore
   workflow_dispatch:
   workflow_call:
    inputs:
@@ -13,6 +16,10 @@ on:
         required: false
         type: string
         default: ${{ github.ref }}
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
   snap:
