@@ -1,5 +1,5 @@
 name: ros2-nav2
-version: '0.1'
+version: '1.1.17'
 summary: The ros2-nav2 navigation snap
 description: |
   The snap provides mapping, localization and navigation capabilities.
