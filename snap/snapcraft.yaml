@@ -1,5 +1,5 @@
 name: ros2-nav2
-version: '0.1'
+adopt-info: ros2-nav2
 summary: The ros2-nav2 navigation snap
 description: |
   The snap provides mapping, localization and navigation capabilities.
@@ -128,6 +128,9 @@ parts:
       - libssl3
       - libboost-serialization1.83.0
       - libboost-thread1.83.0
+    override-stage: |
+      craftctl default
+      craftctl set version=$(apt show ros-jazzy-navigation2 |  awk 'NR==2{print $2}' | cut -d'-' -f1)
 
   scripts:
     plugin: dump

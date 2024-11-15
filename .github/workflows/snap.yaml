@@ -1,8 +1,16 @@
 name: snap
 on:
   push:
+    tags:
+      - 'jazzy/*'
     branches:
       - jazzy
+    paths-ignore:
+      - .github/worflows/promote.yaml
+      - .github/workflows/monthly.yaml
+      - .github/workflows/keepalive.yaml
+      - README.md
+      - .gitignore
   pull_request:
     branches:
       - jazzy
