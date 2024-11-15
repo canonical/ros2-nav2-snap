@@ -128,7 +128,7 @@ parts:
       - libssl3
     override-stage: |
       craftctl default
-      craftctl set version=$(apt show ros-humble-navigation2 |  awk 'NR==2{print $2}')
+      craftctl set version=$(apt show ros-humble-navigation2 |  awk 'NR==2{print $2}' | cut -d'-' -f1)
 
   scripts:
     plugin: dump
