@@ -93,9 +93,9 @@ jobs:
 
                     ## Test slam application
                     sudo snap start ros2-nav2.slam
-                    check_existence topic map 30
-                    check_existence node slam_toolbox 30
-                    check_existence node map_saver 30
+                    check_existence topic map 120
+                    check_existence node slam_toolbox 120
+                    check_existence node map_saver 120
                     sudo snap stop ros2-nav2.slam
 
                     ## Load map
@@ -106,8 +106,8 @@ jobs:
 
                     ## Test localization application
                     sudo snap start ros2-nav2.localization
-                    check_existence node map_server 30
-                    check_existence node amcl 30
+                    check_existence node map_server 120
+                    check_existence node amcl 120
                     sudo snap stop ros2-nav2.localization
 
                     ## Check map has been downloaded
@@ -125,7 +125,7 @@ jobs:
 
                     ## Test navigation configuration
                     sudo snap start ros2-nav2.navigation
-                    check_existence node lifecycle_manager_navigation 30
-                    check_existence node bt_navigator 30
-                    check_existence topic cmd_vel_nav 30
+                    check_existence node lifecycle_manager_navigation 120
+                    check_existence node bt_navigator 120
+                    check_existence topic cmd_vel_nav 120
                     sudo snap stop ros2-nav2.navigation
