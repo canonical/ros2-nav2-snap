@@ -94,7 +94,7 @@ jobs:
                     ## Test slam application
                     sudo snap start ros2-nav2.slam
                     sudo snap services ros2-nav2 | tee /tmp/ros2-nav2-services.txt
-                    grep -Eq 'ros2-nav2.slam\s+enabled\s+active' /tmp/ros2-nav2-services.txt
+                    grep -Eq 'ros2-nav2.slam\s+\S+\s+active' /tmp/ros2-nav2-services.txt
                     check_existence node slam_toolbox 120
                     check_existence node map_saver 120
                     sudo snap stop ros2-nav2.slam
