@@ -80,7 +80,7 @@ license: Apache-2.0
 
 grade: stable
 confinement: strict
-base: core24
+base: core26
 
 platforms:
   amd64:
@@ -97,7 +97,7 @@ apps:
     daemon: simple
     install-mode: disable
     plugs: [network, network-bind]
-    extensions: [ros2-jazzy-desktop]
+    extensions: [ros2-lyrical-desktop]
 
   navigation:
     command: usr/bin/navigation_launcher.sh
@@ -105,7 +105,7 @@ apps:
     daemon: simple
     install-mode: disable
     plugs: [network, network-bind]
-    extensions: [ros2-jazzy-desktop]
+    extensions: [ros2-lyrical-desktop]
 
   reset-config-templates:
     command: usr/bin/reset_config.sh
@@ -117,7 +117,7 @@ apps:
     stop-command: usr/bin/save_map.sh
     post-stop-command: usr/bin/slam_post_stop.sh
     plugs: [network, network-bind]
-    extensions: [ros2-jazzy-desktop]
+    extensions: [ros2-lyrical-desktop]
 
 parts:
   ros2-nav2:
@@ -130,7 +130,7 @@ parts:
       - libboost-thread1.83.0
     override-stage: |
       craftctl default
-      craftctl set version=$(apt show ros-jazzy-navigation2 |  awk 'NR==2{print $2}' | cut -d'-' -f1)
+      craftctl set version=$(apt show ros-lyrical-navigation2 |  awk 'NR==2{print $2}' | cut -d'-' -f1)
 
   scripts:
     plugin: dump

@@ -15,7 +15,7 @@ snapctl set map="${SNAP_COMMON}/maps/current_map.yaml"
 snapctl set map-yaml-path!
 snapctl set map-saver-config!
 
-if ! snapctl is-connected ros-humble; then
-  logger -t ${SNAP_NAME} "Plug 'ros-humble' isn't connected, \
-    please run: snap connect ${SNAP_NAME}:ros-humble <providing-snap>"
+if ! snapctl is-connected ros-lyrical; then
+  logger -t ${SNAP_NAME} "Plug 'ros-lyrical' isn't connected, \
+    please run: snap connect ${SNAP_NAME}:ros-lyrical <providing-snap>"
 fi
